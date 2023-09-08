@@ -13,7 +13,7 @@ const Lobby = () => {
         <Container>
             <div className="Lobby">
                 <header className="header-container">
-                    <h1> Hi welcome to out online coding web app!</h1>
+                    <h1> Hi welcome to our online coding web app!</h1>
                     <h3> Choose code block:</h3>
                 </header>
                 <div className="body-container">
