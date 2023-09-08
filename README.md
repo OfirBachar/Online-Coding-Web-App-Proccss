@@ -21,7 +21,6 @@ https://online-coding-web-app-hjs9-git-addingsocket-ofirbachar.vercel.app/
     - WebSocket server URL for the client
     - MongoDB URL for the server
 
-# Take a look!
-<video src="client/src/asserts/demoVideo.mp4" controls title="Title"></video>
+[Watch a demo Video](client/src/asserts/demoVideo.mp4)
 
 
