@@ -1,10 +1,12 @@
 # Online coding web app
-Tha app offers sharing code blocks in real-time.
-The app provides the option for mentors to observe their students while they are writing and changing the code in real-time.
+The app supports immediate collaboration through real-time code sharing.
+It enables mentors to observe students' live code adjustments.
+The student has an automatic validation feature, where he can get code feedback.
 
-# React + Vite (Client)
-# Node.js Express + Socket.io (Server)
-# Mongodb (DB)
+### React + Vite (Client)
+### Node.js Express + Socket.io (Server)
+### Mongodb (DB)
+
 
 ## Link to site
 https://online-coding-web-app-hjs9-git-addingsocket-ofirbachar.vercel.app/
@@ -20,7 +22,6 @@ https://online-coding-web-app-hjs9-git-addingsocket-ofirbachar.vercel.app/
     - MongoDB URL for the server
 
 # Take a look!
-<video src="20230908-0359-50.6583714.mp4" controls title="Title"></video>
-
+<video src="client/src/asserts/demoVideo.mp4" controls title="Title"></video>
 
 
