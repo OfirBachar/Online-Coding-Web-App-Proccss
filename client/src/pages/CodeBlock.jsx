@@ -11,10 +11,10 @@ const CodeBlock = () => {
 
   const {codeBlock} = useContext(AutoContext);
   const [userType, setUserType] = useState(null);
-  const [code, setCode] = useState("");
-  const [solution, setSolution] = useState("");
-  const [title, setTitle] = useState("");
-  const [codeValue, setCodeValue] = useState("");
+  const [code, setCode] = useState(null);
+  const [solution, setSolution] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [codeValue, setCodeValue] = useState(null);
   const [userId] = useState(Math.floor(Math.random() * 100000));
   const [rightAnswer, setRightAnswer] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(false);
@@ -75,10 +75,7 @@ const CodeBlock = () => {
 
   const checkCodeblock = () => {
 
-    console.log("code:", codeValue?.toString());
-    console.log("solution", solution?.toString());
-
-    if (codeValue?.toString() === solution?.toString()) {
+    if (code.replace(/\s+/g, '') === solution.replace(/\s+/g, '')) {
       setRightAnswer(true);
       setWrongAnswer(false);
       socketEdit.emit("correct-answer", title);
