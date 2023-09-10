@@ -25,6 +25,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
+
 mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.net/OnlineCodingWebApp?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -32,11 +33,7 @@ mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.n
 .catch((error) => console.log("MongoDB connection failed: " , error.message));
 
 
-
 app.listen(port, (req, res) => {
     console.log(`Server running on port: ${port}`);
 } );
-
-
-
   
