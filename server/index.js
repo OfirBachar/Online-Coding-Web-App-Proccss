@@ -10,8 +10,12 @@ const server = require("http").createServer(app);
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors());
-app.use("/api/codeBlocks", codeBlockRoute);
+const corsOptions = {
+    origin: 'https://online-coding-web-app-client.vercel.app',
+  };
+  
+  app.use(cors(corsOptions));
+  app.use("/api/codeBlocks", codeBlockRoute);
 
 app.get("/", (req, res) => {
     res.send("Welcome our online coding web app");
