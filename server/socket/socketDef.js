@@ -65,7 +65,7 @@
         });
       });
     
-      io.listen(5000);
+      io.listen(3002);
     };
 
 module.exports = socketDef;
