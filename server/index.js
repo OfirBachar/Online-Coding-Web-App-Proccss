@@ -27,7 +27,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
-app.listen(port, (req, res) => {
+server.listen(port, (req, res) => {
     console.log(`Server running on port: ${port}`);
 } );
 
@@ -38,8 +38,12 @@ mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.n
 }).then(() => console.log("MongoDB connection established"))
 .catch((error) => console.log("MongoDB connection failed: " , error.message));
 
-
-const io = new Server ({cors: "https://online-coding-web-app-client.vercel.app"});
+const io = socketIo(server, {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"],
+    },
+  });
 
 socketDef(io);
 

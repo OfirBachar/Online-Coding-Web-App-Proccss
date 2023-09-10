@@ -5,7 +5,13 @@ import Editor from "@monaco-editor/react";
 import io from "socket.io-client";
 import smiley_face from "../asserts/smiley_face.svg"
 
-const server_url = 'http://localhost:5000';
+// Create a WebSocket URL
+const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+const hostname = window.location.hostname; // Use the current host
+const port = 5000; // Replace with your WebSocket server's port
+
+const server_url = `${protocol}${hostname}:${port}`;
+
 
 const CodeBlock = () => {
 
