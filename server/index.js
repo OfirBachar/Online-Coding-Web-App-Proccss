@@ -20,7 +20,6 @@ app.get("/", (req, res) => {
 });
 
 const port = process.env.PORT || 7000;
-const uri = process.env.ATLAS_URI;
 
 app.use(cors({
     origin: 'https://online-coding-web-app-client.vercel.app',
@@ -33,7 +32,7 @@ app.listen(port, (req, res) => {
 } );
 
 
-mongoose.connect(uri, {
+mongoose.connect(mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.net/OnlineCodingWebApp?retryWrites=true&w=majority, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("MongoDB connection established"))
