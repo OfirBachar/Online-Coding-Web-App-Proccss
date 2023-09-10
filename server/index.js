@@ -3,7 +3,6 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const codeBlockRoute = require("./Routes/codeBlockRoute");
 const socketDef = require("./socket/socketDef");
-const {Server} = require("socket.io");
 
 
 const app = express();
@@ -27,11 +26,6 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
-app.listen(port, (req, res) => {
-    console.log(`Server running on port: ${port}`);
-} );
-
-
 mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.net/OnlineCodingWebApp?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -40,9 +34,13 @@ mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.n
 
 
 
-const io = new Server ({cors: "https://online-coding-web-app-client.vercel.app"});
+const io = new WebSocket.Server({server});
 
 socketDef(io);
+
+app.listen(port, (req, res) => {
+    console.log(`Server running on port: ${port}`);
+} );
 
 
 
