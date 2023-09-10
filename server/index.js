@@ -15,6 +15,9 @@ app.use(express.json());
 app.use(cors());
 app.use("/", codeBlockRoute);
 
+app.get("/", (req, res) => {
+    res.send("Welcome our online coding web app");
+});
 
 const port = process.env.PORT || 7000;
 const uri = process.env.ATLAS_URI;
