@@ -11,14 +11,13 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/codeBlocks", codeBlockRoute);
+app.use("/codeBlocks/", codeBlockRoute);
 
 app.get("/", (req, res) => {
     res.send("Welcome our online coding web app");
 });
 
 const port = process.env.PORT || 7000;
-const uri = process.env.ATLAS_URI;
 
 app.use(cors({
     origin: 'https://online-coding-web-app-client.vercel.app"',
@@ -26,18 +25,17 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
-app.listen(port, (req, res) => {
-    console.log(`Server running on port: ${port}`);
-} );
-
-
-mongoose.connect(uri, {
+mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.net/OnlineCodingWebApp?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("MongoDB connection established"))
 .catch((error) => console.log("MongoDB connection failed: " , error.message));
 
 
+
+app.listen(port, (req, res) => {
+    console.log(`Server running on port: ${port}`);
+} );
 
 
 
