@@ -13,7 +13,7 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(cors());
-app.use("/", codeBlockRoute);
+app.use("/codeBlocks/", codeBlockRoute);
 
 app.get("/", (req, res) => {
     res.send("Welcome our online coding web app");
