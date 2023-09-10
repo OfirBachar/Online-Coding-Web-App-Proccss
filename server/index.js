@@ -26,19 +26,15 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
-app.listen(port, (req, res) => {
-    console.log(`Server running on port: ${port}`);
-} );
-
-
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("MongoDB connection established"))
 .catch((error) => console.log("MongoDB connection failed: " , error.message));
 
-
-
+app.listen(port, (req, res) => {
+    console.log(`Server running on port: ${port}`);
+} );
 
 
   
