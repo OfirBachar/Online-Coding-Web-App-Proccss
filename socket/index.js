@@ -1,7 +1,18 @@
 const {Server} = require("socket.io");
 const cors = require("cors");
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
 
-const io = new Server ({cors:"https://online-coding-web-app-client.vercel.app"});
+// Allow requests from your frontend origin
+const corsOptions = {
+  origin: 'https://online-coding-web-app-client.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow cookies, if applicable
+  optionsSuccessStatus: 204, // No content status for preflight requests
+};
+
+app.use(cors(corsOptions));
 
 io.on("connection", (socket) => {
     console.log("new connection", socket.id);
