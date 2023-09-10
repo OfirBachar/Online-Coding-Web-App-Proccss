@@ -5,7 +5,7 @@ import Editor from "@monaco-editor/react";
 import io from "socket.io-client";
 import smiley_face from "../asserts/smiley_face.svg"
 
-const server_url = "https://online-coding-web-app-client.vercel.app";
+const server_url = "https://online-coding-web-app-api.vercel.app";
 
 const CodeBlock = () => {
 
