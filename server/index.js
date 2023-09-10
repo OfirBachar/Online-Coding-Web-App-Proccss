@@ -32,11 +32,16 @@ mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.n
 }).then(() => console.log("MongoDB connection established"))
 .catch((error) => console.log("MongoDB connection failed: " , error.message));
 
+// const io = socketIo(server);
 
+// socketDef(io);
 
-const io = socketIo(server);
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({ server });
 
-socketDef(io);
+wss.on('connection', (ws) => {
+    socketDef(ws)// WebSocket connection logic here
+});
 
 app.listen(port, (req, res) => {
     console.log(`Server running on port: ${port}`);
