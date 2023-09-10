@@ -25,7 +25,7 @@ const port = process.env.PORT || 7000;
 const uri = process.env.ATLAS_URI;
 
 app.use(cors({
-    origin: 'https://online-coding-web-app-client.vercel.app"',
+    origin: 'https://online-coding-web-app-client.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
