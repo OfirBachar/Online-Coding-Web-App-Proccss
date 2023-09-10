@@ -19,7 +19,7 @@ export const CodeBlocksProvider = ({children}) => {
             setiscodeBlocksLoading(true);
             setcodeBlocksError(null);
 
-            const response = await getRequest(`${baseUrl}/`)
+            const response = await getRequest(`${baseUrl}/codeBlocks/`)
 
             setiscodeBlocksLoading(false);
 
