@@ -13,7 +13,7 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/codeBlocks", codeBlockRoute);
+app.use("/", codeBlockRoute);
 
 
 const port = process.env.PORT || 7000;
