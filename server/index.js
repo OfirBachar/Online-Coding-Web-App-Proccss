@@ -2,8 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const codeBlockRoute = require("./Routes/codeBlockRoute");
-const socketDef = require("./socket/socketDef");
-const socketIo = require('socket.io');
+
 
 const app = express();
 const server = require("http").createServer(app);
@@ -21,7 +20,7 @@ app.get("/", (req, res) => {
 const port = process.env.PORT || 7000;
 
 app.use(cors({
-    origin: 'https://online-coding-web-app-client.vercel.app',
+    origin: 'https://online-coding-web-app-client.vercel.app"',
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
@@ -33,9 +32,6 @@ mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.n
 .catch((error) => console.log("MongoDB connection failed: " , error.message));
 
 
-const io = new Server ({cors: "https://online-coding-web-app-client.vercel.app"});
-
-socketDef(io);
 
 app.listen(port, (req, res) => {
     console.log(`Server running on port: ${port}`);
