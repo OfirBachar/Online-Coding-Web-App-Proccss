@@ -27,7 +27,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
 
-server.listen(port, (req, res) => {
+app.listen(port, (req, res) => {
     console.log(`Server running on port: ${port}`);
 } );
 
@@ -44,7 +44,6 @@ const io = socketIo(server, {
       methods: ["GET", "POST"],
     },
   });
-
 socketDef(io);
 
 
