@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const codeBlockRoute = require("./Routes/codeBlockRoute");
 const socketDef = require("./socket/socketDef");
-
+const socketIo = require('socket.io');
 
 const app = express();
 const server = require("http").createServer(app);
@@ -34,7 +34,7 @@ mongoose.connect("mongodb+srv://ofir4bachar:Tlida2855@cluster0.b1arvxb.mongodb.n
 
 
 
-const io = new WebSocket.Server({server});
+const io = socketIo(server);
 
 socketDef(io);
 
