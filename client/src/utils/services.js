@@ -1,4 +1,4 @@
-export const baseUrl = "https://online-coding-web-app-api.vercel.app/"
+export const baseUrl = "https://online-coding-web-app-api.vercel.app"
 
 export const postRequest = async (url, body) => {
     const response = await fetch(url, {
