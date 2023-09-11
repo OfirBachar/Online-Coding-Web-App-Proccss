@@ -5,7 +5,7 @@ import Editor from "@monaco-editor/react";
 import io from "socket.io-client";
 import smiley_face from "../asserts/smiley_face.svg"
 
-const server_url = 'http://localhost:5000/';
+const server_url = 'http://localhost:5000';
 
 const CodeBlock = () => {
 
@@ -167,52 +167,3 @@ const CodeBlock = () => {
 };
  
 export default CodeBlock;
-
-{/* <Container>
-<div className="CodeBlock">
-    <header className="header-container">
-        <h1> Welcome to {codeBlock?.title} code block!</h1>
-    </header>
-    <div className="body-container">
-      {codeBlock ? 
-        (<div className="code-block">
-              <h4>Try to fix the code...</h4>
-
-            <h2> {"Code Block title:"} {codeBlock?.title}</h2>
-            <div className="code-check">
-              {equalToTheSolution ? ( 
-                <div className="correct-answer">
-                  <img src={smiley_face} height="300px"/>
-                  <h2>Correct answer, good job</h2>
-                    <Link to={"/"}>
-                      <button className="btn correct-btn">
-                        <h4>Check out more exercises</h4>
-                      </button>
-                    </Link>
-                </div>
-            ) : null}
-            </div>
-            <div className="mode"> 
-              {userType?.isMentor ? (
-                  <h4>mentor user: read only</h4>
-                ) : (
-                  <h4>student user: edit code </h4>
-                )}
-            </div>
-            <div className="editor-code">
-                <Editor
-                  options={{ readOnly: userType?.isMentor }}
-                  theme="vs-dark"
-                  height="300px"
-                  width="80%"
-                  onChange={handleEditorChange}
-                  value={code ? code : codeBlock.Code}
-                  defaultLanguage="javascript"
-                  defaultValue={codeBlock.CodeToEdit}
-                />
-              </div>
-          </div>
-     ) : ( <div>{<p>No code block with this id...</p>}</div>)}
-    </div>
-</div>
-</Container> */}
