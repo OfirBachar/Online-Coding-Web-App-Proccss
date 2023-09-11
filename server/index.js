@@ -23,7 +23,7 @@ const port = process.env.PORT || 7000;
 const uri = process.env.ATLAS_URI;
 
 app.use(cors({
-    origin: 'https://online-coding-web-app-client.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
@@ -40,7 +40,7 @@ mongoose.connect(uri, {
 .catch((error) => console.log("MongoDB connection failed: " , error.message));
 
 
-const io = new Server ({cors: "https://online-coding-web-app-client.vercel.app"});
+const io = new Server ({cors: "http://localhost:5173"});
 
 socketDef(io);
 
